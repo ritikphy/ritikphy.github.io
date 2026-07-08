@@ -1,0 +1,54 @@
+{
+  "items": [
+    {
+      "type": "Typed notes",
+      "title": "Quantum Measurement Notes",
+      "description": "A growing set of clean notes on weak measurement, von Neumann measurement, and the ideas behind weak-value amplification.",
+      "tags": [
+        "Notes",
+        "Weak measurement",
+        "Quantum mechanics"
+      ]
+    },
+    {
+      "type": "Summer internship",
+      "title": "Spin-Direction Coupling in Plasmonic Crystals",
+      "description": "Numerical and conceptual work on spin-direction coupling, plasmonic crystals, and the interpretation of the optical response.",
+      "tags": [
+        "Simulation",
+        "Plasmonics",
+        "Spin-orbit coupling"
+      ]
+    },
+    {
+      "type": "Semester project",
+      "title": "Quantum Eraser Study",
+      "description": "A theoretical project exploring the delayed-choice quantum eraser and how information changes the interpretation of interference.",
+      "tags": [
+        "Quantum eraser",
+        "Interference",
+        "Interpretation"
+      ]
+    },
+    {
+      "type": "Semester project",
+      "title": "Weak Measurement Follow-up",
+      "description": "Follow-up work focused on weak-value amplification, the role of postselection, and the limits of the approximation used in weak measurement.",
+      "tags": [
+        "Weak values",
+        "Postselection",
+        "Amplification"
+      ]
+    },
+    {
+      "type": "Research notes",
+      "title": "Mathematical Methods for Physics",
+      "description": "A structured collection of derivations and short notes that support my core physics preparation and later research reading.",
+      "tags": [
+        "Derivations",
+        "Math",
+        "Physics"
+      ]
+    }
+  ]
+}

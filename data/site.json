@@ -1,0 +1,15 @@
+{
+  "brand": "Ritik Dubey",
+  "heroImages": [
+    "images/hero/hero01.jpg",
+    "images/hero/hero02.jpg",
+    "images/hero/hero03.jpg",
+    "images/hero/hero04.jpg",
+    "images/hero/hero05.jpg"
+  ],
+  "profileImages": [
+    "images/profile/profile01.jpg",
+    "images/profile/profile02.jpg",
+    "images/profile/profile03.jpg"
+  ]
+}
