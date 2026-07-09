@@ -206,8 +206,8 @@ body.drawer-locked {
 
 .hero {
   position: relative;
-  height: 100svh;
-  min-height: 560px;
+  height: 60svh;
+  min-height: 420px;
   display: flex;
   align-items: flex-end;
   overflow: hidden;
