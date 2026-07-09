@@ -62,8 +62,7 @@
 .hero-media {
     position: relative;
 
-    height: 85vh;
-    min-height: 720px;
+    height: 55vh;
 
     overflow: hidden;
 
