@@ -38,8 +38,8 @@ window.RitikHero = (() => {
       profilePhoto.decoding = 'async';
     }
 
-    const quote = window.RitikQuotes.pickRandomQuote(quoteData?.quotes || []);
-    window.RitikQuotes.renderQuote(heroQuote, quote);
+    //const quote = window.RitikQuotes.pickRandomQuote(quoteData?.quotes || []);
+    //window.RitikQuotes.renderQuote(heroQuote, quote);
   }
 
   return { renderHero };
