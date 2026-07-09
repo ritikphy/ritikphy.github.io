@@ -47,7 +47,7 @@
 
 .section-anchor { scroll-margin-top: calc(var(--header-h) + 1.2rem); }
 
-.hero-section { padding-top: var(--header-h); }
+.hero-section { padding-top: 0; }
 
 .hero-media {
   position: relative;
