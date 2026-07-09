@@ -1,0 +1,40 @@
+{
+  "items": [
+    {
+      "title": "Quantum Information Theory",
+      "description": "I am interested in entanglement, distinguishability, quantum channels, and the mathematical structure behind information processing in quantum systems.",
+      "tags": [
+        "Entanglement",
+        "Channels",
+        "Information"
+      ]
+    },
+    {
+      "title": "Quantum Foundations",
+      "description": "I like thinking about the conceptual structure of measurement, postselection, weak measurements, and how quantum theory differs from classical intuition.",
+      "tags": [
+        "Measurement",
+        "Weak values",
+        "Foundations"
+      ]
+    },
+    {
+      "title": "Resource Theory",
+      "description": "Resource-theoretic ideas are appealing because they connect abstract structure with operational meaning. This is one of my current long-term interests.",
+      "tags": [
+        "Operational",
+        "Resources",
+        "Theory"
+      ]
+    },
+    {
+      "title": "Quantum Measurement",
+      "description": "Measurement models, pointer states, and the information carried by measurement outcomes are central to how I think about quantum systems.",
+      "tags": [
+        "Weak measurement",
+        "Postselection",
+        "Models"
+      ]
+    }
+  ]
+}
