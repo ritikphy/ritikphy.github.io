@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============================================================
+     EDIT ME: page title + description (shows in browser tabs,
+     search results, and link previews)
+============================================================ -->
+<title>Your Name — Quantum Physics</title>
+<meta name="description" content="Personal academic website of [Your Name], Master's student in quantum physics. Research, projects, and publications.">
+<meta name="theme-color" content="#12173A">
+<meta property="og:title" content="Your Name — Quantum Physics">
+<meta property="og:description" content="Research, projects and writing on quantum physics.">
+<meta property="og:type" content="website">
+
+<link rel="icon" type="image/svg+xml" href="assets/images/icons/favicon.svg">
+
+<!-- Fonts: Fraunces (headings/quotes), Inter (body), IBM Plex Mono (labels) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Stylesheets - load order matters: tokens, then base, then components, then breakpoints -->
+<link rel="stylesheet" href="assets/css/variables.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+<a href="#home" class="visually-hidden">Skip to content</a>
+
+<!-- ============================================================
+     NAVIGATION
+     Transparent over the hero; solid once scrolled (see main.js).
+============================================================ -->
+<nav class="nav" id="siteNav">
+  <div class="nav__inner">
+    <!-- EDIT ME: your name / site brand -->
+    <a href="#home" class="nav__brand">Your Name</a>
+
+    <div class="nav__links">
+      <a href="#home" class="nav__link">Home</a>
+      <a href="#about" class="nav__link">About</a>
+      <a href="#research" class="nav__link">Research</a>
+      <a href="#projects" class="nav__link">Projects</a>
+      <a href="#publications" class="nav__link">Publications</a>
+      <a href="#blog" class="nav__link">Blog</a>
+      <a href="#contact" class="nav__link">Contact</a>
+    </div>
+
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileDrawer">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile side drawer: mirrors the desktop links. No search bar, by design. -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile navigation">
+  <nav class="mobile-drawer__links">
+    <a href="#home" class="mobile-drawer__link">Home</a>
+    <a href="#about" class="mobile-drawer__link">About</a>
+    <a href="#research" class="mobile-drawer__link">Research</a>
+    <a href="#projects" class="mobile-drawer__link">Projects</a>
+    <a href="#publications" class="mobile-drawer__link">Publications</a>
+    <a href="#blog" class="mobile-drawer__link">Blog</a>
+    <a href="#contact" class="mobile-drawer__link">Contact</a>
+  </nav>
+  <div class="mobile-drawer__footer">
+    <!-- EDIT ME: keep in sync with the Contact section links below -->
+    <a href="mailto:your.email@example.com" class="social-icon" aria-label="Email">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18v12H3z"/><path d="M3 7l9 6 9-6"/></svg>
+    </a>
+    <a href="https://linkedin.com/in/your-profile" class="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7.5 10.5v6M7.5 7.5v.01M11.5 16.5v-3.5c0-1.4 1-2.5 2.5-2.5s2.5 1.1 2.5 2.5v3.5"/></svg>
+    </a>
+    <a href="https://github.com/your-username" class="social-icon" aria-label="GitHub" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2a10 10 0 00-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 015 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0012 2z"/></svg>
+    </a>
+  </div>
+</aside>
+
+<main>
+
+  <!-- ============================================================
+       HERO
+       Background image + quote are picked at random by main.js
+       from the lists in assets/js/data.js.
+  ============================================================ -->
+  <section class="hero" id="home">
+    <div class="hero__media" aria-hidden="true">
+      <img id="heroImage" src="assets/images/hero/hero-1.svg" alt="">
+    </div>
+    <div class="hero__scrim" aria-hidden="true"></div>
+    <div class="hero__trajectories" aria-hidden="true"></div>
+
+    <div class="hero__content">
+      <blockquote class="hero__quote">
+        <p><span class="hero__quote-mark">&ldquo;</span><span id="heroQuoteText">Loading…</span><span class="hero__quote-mark">&rdquo;</span></p>
+      </blockquote>
+      <cite class="hero__attribution" id="heroQuoteAuthor"></cite>
+    </div>
+
+    <div class="hero__scroll-cue" aria-hidden="true">
+      <span>Scroll</span>
+      <span class="line"></span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       INTRO — photo + short introduction
+       EDIT ME: swap the photo and rewrite the two paragraphs below.
+  ============================================================ -->
+  <section class="intro" id="intro">
+    <div class="container">
+      <div class="intro__grid reveal">
+        <div class="intro__photo-wrap">
+          <!-- Replace this src with assets/images/profile/profile.jpg once you have a headshot -->
+          <img class="intro__photo" src="assets/images/profile/profile-placeholder.svg" alt="Portrait of Your Name">
+        </div>
+
+        <div>
+          <p class="eyebrow intro__eyebrow">M.Sc. Physics — Your University</p>
+          <h1 class="intro__name">Your Name</h1>
+          <p class="intro__role">Master's Student in Quantum Physics</p>
+
+          <div class="intro__text">
+            <p>
+              I am a Master's student in physics at <strong>Your University</strong>, where my work
+              focuses on <strong>quantum information theory and the foundations of quantum mechanics</strong>.
+              I completed my Bachelor's degree in Physics at Your University in 20XX, and I am currently
+              writing my Master's thesis, titled &ldquo;Your Thesis Title Goes Here,&rdquo; under the
+              supervision of Prof./Dr. Supervisor Name.
+            </p>
+            <p>
+              My interests sit at the intersection of quantum theory and information — I am especially
+              curious about how entanglement, measurement, and symmetry constrain what an observer can
+              know about a physical system. I am applying to PhD programmes for Autumn 20XX and would
+              welcome the chance to contribute to a rigorous, collaborative research group.
+            </p>
+          </div>
+
+          <div class="intro__links">
+            <a href="#contact" class="btn btn--primary">Get in touch</a>
+            <!-- EDIT ME: add your CV as assets/documents/CV.pdf, then this link will work -->
+            <a href="assets/documents/CV.pdf" class="btn btn--ghost" target="_blank" rel="noopener">Download CV</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT
+       EDIT ME: narrative on the left, education timeline on the
+       right. Add/remove <div class="timeline__item"> blocks freely.
+  ============================================================ -->
+  <section class="section" id="about">
+    <div class="container">
+      <p class="eyebrow reveal">About</p>
+      <h2 class="section-heading reveal">A little more about me</h2>
+
+      <div class="about__grid">
+        <div class="about__text reveal">
+          <p>
+            I first became interested in physics through a fascination with symmetry — the idea that
+            the deepest laws of nature are often the most tightly constrained ones. That interest has
+            carried me from introductory mechanics through to the stranger territory of quantum theory,
+            where the rules of everyday intuition stop applying and have to be rebuilt from first
+            principles.
+          </p>
+          <p>
+            Alongside coursework and research, I care about making physics accessible to people outside
+            it. I've enjoyed tutoring first-year students, helping run a departmental study group, and
+            writing occasional explainers for a general audience (see the Blog section below).
+          </p>
+          <p>
+            Outside the department, I spend my time [hiking / playing an instrument / reading science
+            fiction / rock climbing — edit this to whatever's actually true].
+          </p>
+        </div>
+
+        <div class="timeline reveal">
+          <div class="timeline__item">
+            <p class="timeline__year">20XX</p>
+            <p class="timeline__title">PhD in Physics <em>(prospective)</em></p>
+            <p class="timeline__place">Target programme — applications in progress</p>
+          </div>
+          <div class="timeline__item">
+            <p class="timeline__year">20XX – 20XX</p>
+            <p class="timeline__title">M.Sc. Physics</p>
+            <p class="timeline__place">Your University · Thesis: "Your Thesis Title"</p>
+          </div>
+          <div class="timeline__item">
+            <p class="timeline__year">20XX</p>
+            <p class="timeline__title">Visiting Research Student</p>
+            <p class="timeline__place">Host Institute, City</p>
+          </div>
+          <div class="timeline__item">
+            <p class="timeline__year">20XX – 20XX</p>
+            <p class="timeline__title">B.Sc. Physics</p>
+            <p class="timeline__place">Your University</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       RESEARCH
+       EDIT ME: rewrite the statement and the four interest cards
+       to match your actual focus areas.
+  ============================================================ -->
+  <section class="section section--alt" id="research">
+    <div class="container">
+      <p class="eyebrow reveal">Research</p>
+      <h2 class="section-heading reveal">Research interests</h2>
+      <p class="research__statement reveal">
+        My research sits within quantum information theory and the foundations of quantum mechanics.
+        I am particularly interested in how entanglement and symmetry constrain the information
+        available to different observers, and more broadly I am motivated by
+        <strong>the search for the simplest set of principles from which the strange predictions of
+        quantum theory follow.</strong>
+      </p>
+
+      <div class="research__grid reveal-stagger">
+
+        <div class="research-card">
+          <div class="research-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+              <ellipse cx="12" cy="12" rx="10" ry="4"/>
+              <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/>
+              <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/>
+              <circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/>
+            </svg>
+          </div>
+          <h3 class="research-card__title">Quantum Information</h3>
+          <p class="research-card__text">Entanglement, quantum channels, and the resource-theoretic view of what quantum systems can and cannot do.</p>
+        </div>
+
+        <div class="research-card">
+          <div class="research-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+              <path d="M2 12c1.5-4 3.5-4 5 0s3.5 4 5 0 3.5-4 5 0 3.5 4 5 0"/>
+            </svg>
+          </div>
+          <h3 class="research-card__title">Quantum Foundations</h3>
+          <p class="research-card__text">The measurement problem, interpretations of quantum theory, and what the formalism does — and doesn't — tell us about reality.</p>
+        </div>
+
+        <div class="research-card">
+          <div class="research-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+              <circle cx="12" cy="12" r="9"/>
+              <ellipse cx="12" cy="12" rx="9" ry="3.6"/>
+              <path d="M12 3v18"/>
+            </svg>
+          </div>
+          <h3 class="research-card__title">Open Quantum Systems</h3>
+          <p class="research-card__text">Decoherence, noise, and how familiar classical behaviour emerges from an underlying quantum world.</p>
+        </div>
+
+        <div class="research-card">
+          <div class="research-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+              <path d="M4 4h7v7H4zM13 13h7v7h-7z"/>
+              <path d="M11 7.5h6M7.5 11v6" stroke-dasharray="1.5 2"/>
+            </svg>
+          </div>
+          <h3 class="research-card__title">Symmetries &amp; Subsystems</h3>
+          <p class="research-card__text">How symmetry principles constrain physical theories, and how subsystems are defined relative to an observer's reference frame.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROJECTS
+       EDIT ME: each .project-card below is a template - copy one,
+       change the tag / title / text / link / data-category, and
+       drop a screenshot into assets/images/projects/ if you have one.
+       data-category must match a filter button's data-filter value.
+  ============================================================ -->
+  <section class="section" id="projects">
+    <div class="container">
+      <p class="eyebrow reveal">Projects</p>
+      <h2 class="section-heading reveal">Selected work</h2>
+      <p class="section-intro reveal">Typed course notes, research internships, and small projects along the way.</p>
+
+      <div class="filter-bar reveal">
+        <button class="filter-btn is-active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="notes">Course Notes</button>
+        <button class="filter-btn" data-filter="internship">Internships</button>
+        <button class="filter-btn" data-filter="research">Research</button>
+        <button class="filter-btn" data-filter="course">Course Projects</button>
+      </div>
+
+      <div class="projects__grid reveal-stagger">
+
+        <!-- PROJECT CARD (template — duplicate this block for each new project) -->
+        <article class="project-card" data-category="research">
+          <div class="project-card__media" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg>
+          </div>
+          <div class="project-card__body">
+            <p class="project-card__tag">Research</p>
+            <h3 class="project-card__title">Master's Thesis: Your Thesis Title</h3>
+            <p class="project-card__text">Ongoing thesis work on [topic], supervised by [Supervisor Name]. Investigating [one-line summary of the question].</p>
+            <a href="#" class="project-card__link">View project page →</a>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="internship">
+          <div class="project-card__media" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="7" width="18" height="13" rx="1.5"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg>
+          </div>
+          <div class="project-card__body">
+            <p class="project-card__tag">Summer Internship</p>
+            <h3 class="project-card__title">Research Internship — Host Institution</h3>
+            <p class="project-card__text">Eight-week summer research project on [topic], supervised by [Name]. Produced a final report and short presentation.</p>
+            <a href="#" class="project-card__link">Read summary →</a>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="notes">
+          <div class="project-card__media" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4M9 12h6M9 16h6"/></svg>
+          </div>
+          <div class="project-card__body">
+            <p class="project-card__tag">Course Notes</p>
+            <h3 class="project-card__title">Typed Notes: Quantum Field Theory</h3>
+            <p class="project-card__text">Rewritten, typeset lecture notes with extra derivations and worked examples, cleaned up after the course ended.</p>
+            <a href="#" class="project-card__link">View notes (PDF) →</a>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="notes">
+          <div class="project-card__media" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4M9 12h6M9 16h6"/></svg>
+          </div>
+          <div class="project-card__body">
+            <p class="project-card__tag">Course Notes</p>
+            <h3 class="project-card__title">Typed Notes: General Relativity</h3>
+            <p class="project-card__text">A tidied-up set of notes covering tensor calculus, the Einstein field equations, and the Schwarzschild solution.</p>
+            <a href="#" class="project-card__link">View notes (PDF) →</a>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="course">
+          <div class="project-card__media" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 19l6-6 4 4 6-8"/><circle cx="4" cy="19" r="1.4" fill="currentColor" stroke="none"/><circle cx="20" cy="9" r="1.4" fill="currentColor" stroke="none"/></svg>
+          </div>
+          <div class="project-card__body">
+            <p class="project-card__tag">Course Project</p>
+            <h3 class="project-card__title">Numerical Simulation of [System]</h3>
+            <p class="project-card__text">A small Python project simulating [system], built as coursework for [Course Name].</p>
+            <a href="#" class="project-card__link">View on GitHub →</a>
+          </div>
+        </article>
+        <!-- END PROJECT CARD TEMPLATE -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PUBLICATIONS
+       No entries yet - this section ships as a clean empty state.
+       When you have a first paper, replace the .empty-state div
+       with a .pub-list of .pub-item entries (template below,
+       commented out).
+  ============================================================ -->
+  <section class="section section--alt" id="publications">
+    <div class="container">
+      <p class="eyebrow reveal">Publications</p>
+      <h2 class="section-heading reveal">Publications</h2>
+
+      <div class="reveal">
+        <div class="empty-state">
+          <div class="empty-state__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4"/></svg>
+          </div>
+          <p class="empty-state__title">Nothing published yet</p>
+          <p class="empty-state__text">Peer-reviewed papers and preprints will be listed here as they are submitted. In the meantime, see the Projects section for ongoing work.</p>
+        </div>
+
+        <!--
+        PUBLICATION ENTRY TEMPLATE — uncomment and duplicate once
+        you have a paper, and remove the .empty-state div above.
+        Wrap entries in <div class="pub-list"> ... </div>
+
+        <div class="pub-item">
+          <p class="pub-item__year">20XX</p>
+          <div>
+            <p class="pub-item__title">Title of the Paper Goes Here</p>
+            <p class="pub-item__meta">Your Name, Coauthor Name — Journal / arXiv, 20XX</p>
+          </div>
+          <a href="#" class="pub-item__link">arXiv</a>
+        </div>
+        -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       BLOG
+       Same pattern as Publications: empty state now, with a
+       ready-to-use card template commented out below.
+  ============================================================ -->
+  <section class="section" id="blog">
+    <div class="container">
+      <p class="eyebrow reveal">Blog</p>
+      <h2 class="section-heading reveal">Notes &amp; writing</h2>
+      <p class="section-intro reveal">Occasional posts on physics, research life, and things I've been reading.</p>
+
+      <div class="reveal">
+        <div class="empty-state">
+          <div class="empty-state__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h4"/></svg>
+          </div>
+          <p class="empty-state__title">First post is on its way</p>
+          <p class="empty-state__text">This is where short write-ups and explainers will appear. Check back soon.</p>
+        </div>
+
+        <!--
+        BLOG CARD TEMPLATE — uncomment and duplicate per post, and
+        remove the .empty-state div above. Wrap cards in
+        <div class="blog__grid"> ... </div>
+
+        <article class="blog-card">
+          <div class="blog-card__media">
+            <img src="assets/images/projects/your-post-image.jpg" alt="">
+          </div>
+          <p class="blog-card__date">Month 20XX</p>
+          <h3 class="blog-card__title">Post Title Goes Here</h3>
+          <p class="blog-card__excerpt">One or two sentences previewing what the post is about.</p>
+        </article>
+        -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT
+       EDIT ME: swap in your real email + social links (keep the
+       mobile drawer footer above in sync with these).
+  ============================================================ -->
+  <section class="section contact" id="contact">
+    <div class="contact__trajectories" aria-hidden="true"></div>
+    <div class="container contact__inner reveal">
+      <p class="eyebrow">Get in touch</p>
+      <h2 class="contact__heading">Let's talk physics</h2>
+      <p class="contact__text">
+        I'm always happy to hear from prospective supervisors, collaborators, or fellow students
+        working on related questions. Email is the fastest way to reach me.
+      </p>
+
+      <a href="mailto:your.email@example.com" class="btn btn--primary">Email me</a>
+
+      <div class="contact__socials">
+        <a href="mailto:your.email@example.com" class="social-icon" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18v12H3z"/><path d="M3 7l9 6 9-6"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/your-profile" class="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7.5 10.5v6M7.5 7.5v.01M11.5 16.5v-3.5c0-1.4 1-2.5 2.5-2.5s2.5 1.1 2.5 2.5v3.5"/></svg>
+        </a>
+        <a href="https://github.com/your-username" class="social-icon" aria-label="GitHub" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2a10 10 0 00-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 015 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0012 2z"/></svg>
+        </a>
+        <a href="https://scholar.google.com/citations?user=your-id" class="social-icon" aria-label="Google Scholar" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 4L3 9l9 5 9-5-9-5z"/><path d="M6.5 11.5V17c0 1.5 2.5 3 5.5 3s5.5-1.5 5.5-3v-5.5"/></svg>
+        </a>
+        <a href="https://orcid.org/your-id" class="social-icon" aria-label="ORCID" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9.5"/><circle cx="9.2" cy="8.6" r="0.9" fill="currentColor" stroke="none"/><path d="M9.2 11v6.2M13 11v3.6c0 1.5 1.1 2.6 2.6 2.6s2.6-1.1 2.6-2.6-1.1-2.6-2.6-2.6H13"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <!-- EDIT ME: name in the copyright line -->
+    <p>&copy; <span id="footerYear"></span> Your Name. All rights reserved.</p>
+    <a href="#home" class="back-to-top" aria-label="Back to top">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </a>
+  </div>
+</footer>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
