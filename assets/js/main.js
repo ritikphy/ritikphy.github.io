@@ -60,6 +60,7 @@ function initMobileDrawer() {
   });
 
   overlay.addEventListener('click', close);
+  document.getElementById('drawerClose')?.addEventListener('click', close);
 
   // close after tapping a link so the drawer doesn't sit open over the new section
   drawer.querySelectorAll('.mobile-drawer__link').forEach(link => {
