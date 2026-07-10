@@ -143,6 +143,24 @@
   transition: transform var(--dur-slow) var(--ease-smooth);
 }
 
+.mobile-drawer__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px; height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(237, 235, 251, 0.25);
+  color: var(--text-on-dark);
+  transition: transform var(--dur-fast) var(--ease-smooth), border-color var(--dur-fast);
+}
+.mobile-drawer__close:hover {
+  transform: scale(1.1) rotate(90deg);
+  border-color: var(--color-accent);
+}
+.mobile-drawer__close svg { width: 18px; height: 18px; }
+
 .mobile-drawer.is-open {
   transform: translateX(0);
 }
