@@ -514,6 +514,7 @@ body.drawer-locked {
 }
 
 .research-card {
+  position: relative;
   background: var(--color-white);
   border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
@@ -521,12 +522,33 @@ body.drawer-locked {
   transition: transform var(--dur-med) var(--ease-smooth),
               box-shadow var(--dur-med) var(--ease-smooth),
               border-color var(--dur-med) var(--ease-smooth);
+  cursor: default;
 }
 
-.research-card:hover {
-  transform: translateY(-6px) scale(1.015);
+/* shared "expanded" look, triggered by :hover on desktop and
+   .is-expanded (via JS) on touch devices */
+.research-card:hover,
+.research-card.is-expanded {
+  transform: translateY(-6px) scale(1.04);
   box-shadow: var(--shadow-soft);
   border-color: transparent;
+  z-index: 2;             /* lifts above neighbouring cards while it grows */
+}
+
+.research-card__desc {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height var(--dur-med) var(--ease-smooth),
+              opacity var(--dur-fast) var(--ease-smooth) 0.05s,
+              margin-top var(--dur-med) var(--ease-smooth);
+}
+
+.research-card:hover .research-card__desc,
+.research-card.is-expanded .research-card__desc {
+  max-height: 200px;       /* comfortably more than the text needs */
+  opacity: 1;
+  margin-top: 0.85rem;
 }
 
 .research-card__icon {
@@ -602,9 +624,31 @@ body.drawer-locked {
   flex-direction: column;
 }
 
-.project-card:hover {
-  transform: translateY(-8px) scale(1.02);
+.project-card {
+  position: relative;
+}
+
+.project-card:hover,
+.project-card.is-expanded {
+  transform: translateY(-8px) scale(1.04);
   box-shadow: var(--shadow-soft);
+  z-index: 2;
+}
+
+.project-card__desc {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height var(--dur-med) var(--ease-smooth),
+              opacity var(--dur-fast) var(--ease-smooth) 0.05s,
+              margin-bottom var(--dur-med) var(--ease-smooth);
+}
+
+.project-card:hover .project-card__desc,
+.project-card.is-expanded .project-card__desc {
+  max-height: 160px;
+  opacity: 1;
+  margin-bottom: var(--space-2);
 }
 
 .project-card__media {
