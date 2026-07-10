@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initProjectFilters();
   initBackToTop();
   initFooterYear();
+  initExpandableCards(); 
 });
 
 
@@ -36,6 +37,20 @@ function initNavScroll() {
   window.addEventListener('resize', toggle, { passive: true });
 }
 
+/* ---------- Tap-to-expand research/project cards on touch devices ---------- */
+function initExpandableCards() {
+  const isTouch = window.matchMedia('(hover: none)').matches;
+  if (!isTouch) return; // desktop already gets this via CSS :hover, nothing to do
+
+  const cards = document.querySelectorAll('.research-card, .project-card');
+  cards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      const alreadyOpen = card.classList.contains('is-expanded');
+      cards.forEach(c => c.classList.remove('is-expanded'));
+      if (!alreadyOpen) card.classList.add('is-expanded');
+    });
+  });
+}
 
 /* ---------- Mobile drawer open / close ---------- */
 function initMobileDrawer() {
