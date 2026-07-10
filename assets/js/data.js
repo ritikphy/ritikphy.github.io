@@ -18,30 +18,24 @@
       keep "text" and "author" as separate fields.
 ============================================================ */
 
-/*
+
 const HERO_IMAGES = [
   'assets/images/hero/hero-1.svg',
   'assets/images/hero/hero-2.svg',
   'assets/images/hero/hero-3.svg',
 ];
-*/
 
+
+/*
 const HERO_IMAGES = [
   'assets/images/hero/hero-background.jpg',
 ];
+*/
 
 const QUOTES = [
   {
-    text: "I think I can safely say that nobody understands quantum mechanics.",
-    author: "Richard Feynman"
-  },
-  {
     text: "The task is not so much to see what no one has yet seen, but to think what nobody has yet thought, about that which everybody sees.",
     author: "Erwin Schrödinger"
-  },
-  {
-    text: "What I cannot create, I do not understand.",
-    author: "Richard Feynman"
   },
   {
     text: "My goal is simple. It is a complete understanding of the universe, why it is as it is and why it exists at all.",
