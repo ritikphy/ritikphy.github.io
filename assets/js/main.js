@@ -22,13 +22,18 @@ document.addEventListener('DOMContentLoaded', () => {
 /* ---------- Nav background swap on scroll ---------- */
 function initNavScroll() {
   const nav = document.querySelector('.nav');
-  if (!nav) return;
+  const hero = document.querySelector('.hero');
+  if (!nav || !hero) return;
 
   const toggle = () => {
-    nav.classList.toggle('nav--scrolled', window.scrollY > window.innerHeight * 0.72);
+    const heroBottom = hero.getBoundingClientRect().bottom;
+    // switch once the hero has scrolled (mostly) out of view, not at a
+    // fixed fraction of the screen — so it tracks the hero's real height
+    nav.classList.toggle('nav--scrolled', heroBottom < 80);
   };
   toggle();
   window.addEventListener('scroll', toggle, { passive: true });
+  window.addEventListener('resize', toggle, { passive: true });
 }
 
 
