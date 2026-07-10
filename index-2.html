@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============================================================
+     EDIT ME: page title + description (shows in browser tabs,
+     search results, and link previews)
+============================================================ -->
+<title>Ritik Dubey — IISER Kolkata</title>
+<meta name="description" content="Personal academic website of Ritik Dubey, Master's student in quantum physics. Research, projects, and publications.">
+<meta name="theme-color" content="#12173A">
+<meta property="og:title" content="Ritik Dubey — IISER Kolkata">
+<meta property="og:description" content="Research, projects and writing on quantum physics.">
+<meta property="og:type" content="website">
+
+<link rel="icon" type="image/svg+xml" href="assets/images/icons/favicon.svg">
+
+<!-- Fonts: Fraunces (headings/quotes), Inter (body), IBM Plex Mono (labels) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Stylesheets - load order matters: tokens, then base, then components, then breakpoints -->
+<link rel="stylesheet" href="assets/css/variables.css">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+<a href="#home" class="visually-hidden">Skip to content</a>
+
+<!-- ============================================================
+     NAVIGATION
+     Transparent over the hero; solid once scrolled (see main.js).
+============================================================ -->
+<nav class="nav" id="siteNav">
+  <div class="nav__inner">
+    <!-- EDIT ME: your name / site brand -->
+    <a href="#home" class="nav__brand">Ritik Dubey</a>
+
+    <div class="nav__links">
+      <a href="#home" class="nav__link">Home</a>
+      <a href="#about" class="nav__link">About</a>
+      <a href="#research" class="nav__link">Research</a>
+      <a href="#projects" class="nav__link">Projects</a>
+      <a href="#publications" class="nav__link">Publications</a>
+      <a href="#blog" class="nav__link">Blog</a>
+      <a href="#contact" class="nav__link">Contact</a>
+    </div>
+
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileDrawer">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile side drawer: mirrors the desktop links. No search bar, by design. -->
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile navigation">
+  <button class="mobile-drawer__close" id="drawerClose" aria-label="Close menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <nav class="mobile-drawer__links">
+    <a href="#home" class="mobile-drawer__link">Home</a>
+    <a href="#about" class="mobile-drawer__link">About</a>
+    <a href="#research" class="mobile-drawer__link">Research</a>
+    <a href="#projects" class="mobile-drawer__link">Projects</a>
+    <a href="#publications" class="mobile-drawer__link">Publications</a>
+    <a href="#blog" class="mobile-drawer__link">Blog</a>
+    <a href="#contact" class="mobile-drawer__link">Contact</a>
+  </nav>
+  <div class="mobile-drawer__footer">
+    <!-- EDIT ME: keep in sync with the Contact section links below -->
+    <a href="mailto:rd22ms208@iiserkol.ac.in" class="social-icon" aria-label="Email">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18v12H3z"/><path d="M3 7l9 6 9-6"/></svg>
+    </a>
+    <a href="https://linkedin.com/in/ritik-dubey-9b148a251" class="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7.5 10.5v6M7.5 7.5v.01M11.5 16.5v-3.5c0-1.4 1-2.5 2.5-2.5s2.5 1.1 2.5 2.5v3.5"/></svg>
+    </a>
+    <a href="https://github.com/ritikphy" class="social-icon" aria-label="GitHub" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2a10 10 0 00-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 015 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0012 2z"/></svg>
+    </a>
+  </div>
+</aside>
+
+<main>
+
+  <!-- ============================================================
+       HERO
+       Background image + quote are picked at random by main.js
+       from the lists in assets/js/data.js.
+  ============================================================ -->
+  <section class="hero" id="home">
+    <div class="hero__media" aria-hidden="true">
+      <img id="heroImage" src="assets/images/hero/hero-background.jpg" alt="">
+    </div>
+    <div class="hero__scrim" aria-hidden="true"></div>
+    <!-- <div class="hero__fade" aria-hidden="true"></div> -->
+    <div class="hero__trajectories" aria-hidden="true"></div>
+
+    <div class="hero__content">
+      <blockquote class="hero__quote">
+        <p><span class="hero__quote-mark">&ldquo;</span><span id="heroQuoteText">Loading…</span><span class="hero__quote-mark">&rdquo;</span></p>
+      </blockquote>
+      <cite class="hero__attribution" id="heroQuoteAuthor"></cite>
+    </div>
+
+    <div class="hero__scroll-cue" aria-hidden="true">
+      <span>Scroll</span>
+      <span class="line"></span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       INTRO — photo + short introduction
+       EDIT ME: swap the photo and rewrite the two paragraphs below.
+  ============================================================ -->
+  <section class="intro" id="intro">
+    <div class="container">
+      <div class="intro__grid reveal">
+        <div class="intro__photo-wrap">
+          <!-- Replace this src with assets/images/profile/profile.jpg once you have a headshot -->
+          <img class="intro__photo" src="assets/images/profile/profile01.jpg" >
+        </div>
+
+        <div>
+          <p class="eyebrow intro__eyebrow">B.S-M.S Physics — IISER Kolkata</p>
+          <h1 class="intro__name">Ritik Dubey</h1>
+          <p class="intro__role">Master's Student in Quantum Physics</p>
+
+          <div class="intro__text">
+            <p>
+              I'm a final-year BS&ndash;MS Physics student at <strong>IISER Kolkata</strong>, working at
+              the intersection of <strong>quantum foundations and quantum information</strong>. My recent
+              work has focused on weak measurement theory and what it reveals about quantum systems that
+              strong measurement cannot.
+            </p>
+            <p>
+              I'll be starting my Master's thesis at the <strong>Harish-Chandra Research Institute</strong>
+              under Prof. Ujjwal Sen, working on quantum communication. I am applying to PhD programmes
+              for Autumn 2027 and would welcome the chance to contribute to a rigorous, collaborative
+              research group.
+            </p>
+          </div>
+
+          <div class="intro__links">
+            <a href="#contact" class="btn btn--primary">Get in touch</a>
+            <!-- EDIT ME: add your CV as assets/documents/CV.pdf, then this link will work -->
+            <a href="assets/documents/CV.pdf" class="btn btn--ghost" target="_blank" rel="noopener">Download CV</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT
+       EDIT ME: narrative on the left, education timeline on the
+       right. Add/remove <div class="timeline__item"> blocks freely.
+  ============================================================ -->
+  <section class="section" id="about">
+  <div class="container">
+    <p class="eyebrow reveal">About</p>
+    <h2 class="section-heading reveal">A little more about me</h2>
+
+    <div class="about__grid">
+      <div class="about__text reveal">
+        <p>
+          My path into physics research started with numerical simulations of classical fluid dynamics
+          during a summer at IIT Kharagpur, before moving toward quantum foundations and quantum
+          information. Working through the weak measurement formalism — first as a review, then as an
+          ongoing research project — showed me how much can be learned about a quantum system without
+          fully collapsing it, and that's stayed the throughline of my interests since.
+        </p>
+        <p>
+          I'm now heading into my Master's thesis at HRI, shifting focus toward quantum communication,
+          while keeping an eye on how these threads connect through the resource-theoretic view of
+          quantum mechanics.
+        </p>
+        <p>
+          Alongside coursework and research, I care about making physics accessible to people outside
+          it. I've enjoyed tutoring first-year students and taking part in problem-solving competitions
+          like the IBM Qiskit Fall Fest and the International Physics Tournament.
+        </p>
+      </div>
+
+      <div class="timeline reveal">
+        <div class="timeline__item">
+          <p class="timeline__year">2026 – 2027</p>
+          <p class="timeline__title">Visiting Thesis Student</p>
+          <p class="timeline__place">HRI Prayagraj, India — Quantum Communication, under Prof. Ujjwal Sen</p>
+        </div>
+        <div class="timeline__item">
+          <p class="timeline__year">2025 – 2026</p>
+          <p class="timeline__title">Weak-Value Amplification in Polarized Light</p>
+          <p class="timeline__place">IISER Kolkata, India — with Prof. Nirmalya Ghosh</p>
+        </div>
+        <div class="timeline__item">
+          <p class="timeline__year">May – July 2025</p>
+          <p class="timeline__title">Summer Research Internship</p>
+          <p class="timeline__place">IISER Kolkata, India — Spin&ndash;direction coupling in plasmonic waveguides</p>
+        </div>
+        <div class="timeline__item">
+          <p class="timeline__year">May – July 2024</p>
+          <p class="timeline__title">Summer Research Internship</p>
+          <p class="timeline__place">IIT Kharagpur, India — Numerical fluid dynamics, with Prof. Vishwanath Shukla</p>
+        </div>
+        <div class="timeline__item">
+          <p class="timeline__year">2022 – 2027</p>
+          <p class="timeline__title">B.S-M.S (dual degree) Physics</p>
+          <p class="timeline__place">IISER Kolkata, India — CGPA: 8.22</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- ============================================================
+       RESEARCH
+       EDIT ME: rewrite the statement and the four interest cards
+       to match your actual focus areas.
+  ============================================================ -->
+  <section class="section section--alt" id="research">
+    <div class="container">
+      <p class="eyebrow reveal">Research</p>
+      <h2 class="section-heading reveal">Research interests</h2>
+      <p class="research__statement reveal">
+        My research sits within quantum information theory and the foundations of quantum mechanics.
+        I'm particularly interested in what weak measurement reveals about quantum systems, how
+        entanglement functions as a communication resource, and more broadly I am motivated by
+        <strong>the search for the simplest set of principles from which the strange predictions of
+        quantum theory follow.</strong>
+      </p>
+
+      <div class="research__grid reveal-stagger">
+
+        <div class="research-card">
+          <h3 class="research-card__title">Quantum Communication</h3>
+          <div class="research-card__desc">
+           <p class="research-card__text">I work on quantum communication protocols, currently as part of my Master's thesis at HRI under Prof. Ujjwal Sen. I'm interested in how entanglement and quantum correlations can be used as a resource for communication tasks, and where the limits of that resource lie.</p>
+          </div>
+     </div>
+
+        <div class="research-card">
+          <h3 class="research-card__title">Quantum Foundations</h3>
+          <div class="research-card__desc">
+          <p class="research-card__text">My earlier research focused on weak measurement theory — deriving and numerically reproducing the AAV and SSD formalisms to study weak-value amplification and its sensitivity to pre- and post-selection.</p>
+          </div>
+     </div>
+
+        <div class="research-card">
+          <h3 class="research-card__title">Open Quantum Systems</h3>
+          <div class="research-card__desc">
+          <p class="research-card__text">Through a summer project on spin&ndash;direction coupling in plasmonic waveguides, I studied how tight focusing induces spin-dependent directional effects in guided light.</p>
+          </div>
+        </div>
+
+        <div class="research-card">
+          <h3 class="research-card__title">Quantum Resource Theory</h3>
+          <div class="research-card__desc">
+          <p class="research-card__text">I'm interested in the resource-theoretic framing of quantum mechanics — treating entanglement, coherence, and asymmetry as resources with well-defined rules for their generation and use.</p>
+          </div>
+     </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PROJECTS
+       EDIT ME: each .project-card below is a template - copy one,
+       change the tag / title / text / link / data-category, and
+       drop a screenshot into assets/images/projects/ if you have one.
+       data-category must match a filter button's data-filter value.
+  ============================================================ -->
+  <section class="section" id="projects">
+    <div class="container">
+      <p class="eyebrow reveal">Projects</p>
+      <h2 class="section-heading reveal">Selected work</h2>
+      <p class="section-intro reveal">Typed course notes, research internships, and small projects along the way.</p>
+
+      <div class="filter-bar reveal">
+        <button class="filter-btn is-active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="notes">Course Notes</button>
+        <button class="filter-btn" data-filter="internship">Internships</button>
+        <button class="filter-btn" data-filter="research">Research</button>
+        <button class="filter-btn" data-filter="course">Course Projects</button>
+      </div>
+
+      <div class="projects__grid reveal-stagger">
+
+        <!-- PROJECT CARD (template — duplicate this block for each new project) -->
+        <article class="project-card" data-category="research">
+          <div class="project-card__body">
+            <p class="project-card__tag">Research</p>
+            <h3 class="project-card__title">Weak-Value Amplification in Polarized Light</h3>
+            <div class="project-card__desc">
+            <p class="project-card__text">Continuing research under Prof. Nirmalya Ghosh on weak-value amplification using polarized light, building on the theoretical formalism developed in the prior review project.</p>
+            </div>  
+          </div>
+        </article>
+
+        <article class="project-card" data-category="research">
+          <div class="project-card__body">
+            <p class="project-card__tag">Research</p>
+            <h3 class="project-card__title">Quantum Weak Measurement: AAV &amp; SSD Review</h3>
+          <div class="project-card__desc">
+            <p class="project-card__text">Derived the weak measurement formalism of Aharonov, Albert &amp; Vaidman (AAV) and Duck, Stevenson &amp; Sudarshan (SSD), and numerically reproduced key results on weak-value amplification and its sensitivity to pre- and post-selection.</p>
+          </div>  
+          <a href="#" class="project-card__link">View report (GitHub / PDF) →</a>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="internship">
+          <div class="project-card__body">
+            <p class="project-card__tag">Summer Internship</p>
+            <h3 class="project-card__title">Spin&ndash;Direction Coupling in Plasmonic Waveguides</h3>
+          <div class="project-card__desc">
+            <p class="project-card__text">Numerically simulated spin&ndash;direction coupling in waveguided plasmonic crystals under tight focusing, demonstrating spin-dependent directional guiding and direction-dependent spin acquisition. (Prof. Nirmalya Ghosh, IISER Kolkata)</p>
+          </div>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="course">
+          <div class="project-card__body">
+            <p class="project-card__tag">Theoretical Study</p>
+            <h3 class="project-card__title">Delayed-Choice Quantum Eraser</h3>
+          <div class="project-card__desc">
+            <p class="project-card__text">A conceptual study of complementarity, entanglement, and quantum measurement through the delayed-choice quantum eraser thought experiment. (Prof. Sourin Das, IISER Kolkata)</p>
+          </div>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="notes">
+          <div class="project-card__body">
+            <p class="project-card__tag">Course Notes</p>
+            <h3 class="project-card__title">Typed Notes: Quantum Field Theory</h3>
+          <div class="project-card__desc">
+            <p class="project-card__text">Rewritten, typeset lecture notes with extra derivations and worked examples, cleaned up after the course ended.</p>
+          </div>
+          <a href="#" class="project-card__link">View notes (PDF) →</a>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="notes">
+          <div class="project-card__body">
+            <p class="project-card__tag">Course Notes</p>
+            <h3 class="project-card__title">Typed Notes: General Relativity</h3>
+          <div class="project-card__desc">
+            <p class="project-card__text">A tidied-up set of notes covering tensor calculus, the Einstein field equations, and the Schwarzschild solution.</p>
+          </div>
+          <a href="#" class="project-card__link">View notes (PDF) →</a>
+          </div>
+        </article>
+
+        <article class="project-card" data-category="internship">
+          <div class="project-card__body">
+            <p class="project-card__tag">Summer Internship</p>
+            <h3 class="project-card__title">2D Navier&ndash;Stokes &amp; Toner&ndash;Tu Simulations</h3>
+          <div class="project-card__desc">
+            <p class="project-card__text">Numerically simulated the 2D Navier&ndash;Stokes and Toner&ndash;Tu equations using Dedalus, analyzing vortex dynamics and energy cascades. (Prof. Vishwanath Shukla, IIT Kharagpur)</p>
+          </div>
+          </div>
+        </article>
+        <!-- END PROJECT CARD TEMPLATE -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PUBLICATIONS
+       No entries yet - this section ships as a clean empty state.
+       When you have a first paper, replace the .empty-state div
+       with a .pub-list of .pub-item entries (template below,
+       commented out).
+  ============================================================ -->
+  <section class="section section--alt" id="publications">
+    <div class="container">
+      <p class="eyebrow reveal">Publications</p>
+      <h2 class="section-heading reveal">Publications</h2>
+
+      <div class="reveal">
+        <div class="empty-state">
+          <div class="empty-state__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4"/></svg>
+          </div>
+          <p class="empty-state__title">Nothing published yet</p>
+          <p class="empty-state__text">Peer-reviewed papers and preprints will be listed here as they are submitted. In the meantime, see the Projects section for ongoing work.</p>
+        </div>
+
+        <!--
+        PUBLICATION ENTRY TEMPLATE — uncomment and duplicate once
+        you have a paper, and remove the .empty-state div above.
+        Wrap entries in <div class="pub-list"> ... </div>
+
+        <div class="pub-item">
+          <p class="pub-item__year">20XX</p>
+          <div>
+            <p class="pub-item__title">Title of the Paper Goes Here</p>
+            <p class="pub-item__meta">Your Name, Coauthor Name — Journal / arXiv, 20XX</p>
+          </div>
+          <a href="#" class="pub-item__link">arXiv</a>
+        </div>
+        -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       BLOG
+       Same pattern as Publications: empty state now, with a
+       ready-to-use card template commented out below.
+  ============================================================ -->
+  <section class="section" id="blog">
+    <div class="container">
+      <p class="eyebrow reveal">Blog</p>
+      <h2 class="section-heading reveal">Notes &amp; writing</h2>
+      <p class="section-intro reveal">Occasional posts on physics, research life, and things I've been reading.</p>
+
+      <div class="reveal">
+        <div class="empty-state">
+          <div class="empty-state__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h4"/></svg>
+          </div>
+          <p class="empty-state__title">First post is on its way</p>
+          <p class="empty-state__text">This is where short write-ups and explainers will appear. Check back soon.</p>
+        </div>
+
+        <!--
+        BLOG CARD TEMPLATE — uncomment and duplicate per post, and
+        remove the .empty-state div above. Wrap cards in
+        <div class="blog__grid"> ... </div>
+
+        <article class="blog-card">
+          <div class="blog-card__media">
+            <img src="assets/images/projects/your-post-image.jpg" alt="">
+          </div>
+          <p class="blog-card__date">Month 20XX</p>
+          <h3 class="blog-card__title">Post Title Goes Here</h3>
+          <p class="blog-card__excerpt">One or two sentences previewing what the post is about.</p>
+        </article>
+        -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT
+       EDIT ME: swap in your real email + social links (keep the
+       mobile drawer footer above in sync with these).
+  ============================================================ -->
+  <section class="section contact" id="contact">
+    <div class="contact__trajectories" aria-hidden="true"></div>
+    <div class="container contact__inner reveal">
+      <p class="eyebrow">Get in touch</p>
+      <h2 class="contact__heading">Let's talk physics</h2>
+      <p class="contact__text">
+        I'm always happy to hear from prospective supervisors, collaborators, or fellow students
+        working on related questions. Email is the fastest way to reach me.
+      </p>
+
+      <a href="mailto:rd22ms208@iiserkol.ac.in" class="btn btn--primary">Email me</a>
+
+      <div class="contact__socials">
+        <a href="mailto:rd22ms208@iiserkol.ac.in" class="social-icon" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18v12H3z"/><path d="M3 7l9 6 9-6"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/ritik-dubey-9b148a251" class="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7.5 10.5v6M7.5 7.5v.01M11.5 16.5v-3.5c0-1.4 1-2.5 2.5-2.5s2.5 1.1 2.5 2.5v3.5"/></svg>
+        </a>
+        <a href="https://github.com/ritikphy" class="social-icon" aria-label="GitHub" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2a10 10 0 00-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.6 9.6 0 015 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0012 2z"/></svg>
+        </a>
+        <a href="https://scholar.google.com/citations?user=your-id" class="social-icon" aria-label="Google Scholar" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 4L3 9l9 5 9-5-9-5z"/><path d="M6.5 11.5V17c0 1.5 2.5 3 5.5 3s5.5-1.5 5.5-3v-5.5"/></svg>
+        </a>
+        <a href="https://orcid.org/your-id" class="social-icon" aria-label="ORCID" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9.5"/><circle cx="9.2" cy="8.6" r="0.9" fill="currentColor" stroke="none"/><path d="M9.2 11v6.2M13 11v3.6c0 1.5 1.1 2.6 2.6 2.6s2.6-1.1 2.6-2.6-1.1-2.6-2.6-2.6H13"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <!-- EDIT ME: name in the copyright line -->
+    <p>&copy; <span id="footerYear"></span> Ritik Dubey. All rights reserved.</p>
+    <a href="#home" class="back-to-top" aria-label="Back to top">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </a>
+  </div>
+</footer>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
