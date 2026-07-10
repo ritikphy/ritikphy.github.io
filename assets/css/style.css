@@ -264,7 +264,7 @@ body.drawer-locked {
   position: absolute;
   left: 0; right: 0;
   bottom: 0;
-  height: 140px;
+  height: 100px;
   z-index: 2;
   background: linear-gradient(180deg, transparent 0%, var(--color-paper) 100%);
   pointer-events: none;
