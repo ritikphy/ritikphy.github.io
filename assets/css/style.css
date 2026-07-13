@@ -224,8 +224,8 @@ body.drawer-locked {
 
 .hero {
   position: relative;
-  height: 60svh;
-  min-height: 420px;
+  height: 45svh;
+  min-height: 350px;
   display: flex;
   align-items: flex-end;
   overflow: hidden;
@@ -260,6 +260,7 @@ body.drawer-locked {
     linear-gradient(180deg, rgba(18,23,58,0.35) 0%, rgba(18,23,58,0.25) 40%, rgba(12,15,40,0.78) 100%);
 }
 
+/*
 .hero__fade {
   position: absolute;
   left: 0; right: 0;
@@ -269,6 +270,7 @@ body.drawer-locked {
   background: linear-gradient(180deg, transparent 0%, var(--color-paper) 100%);
   pointer-events: none;
 }
+*/
 
 /* animated particle-trajectory overlay, see main.js -> drawTrajectories() */
 .hero__trajectories {
