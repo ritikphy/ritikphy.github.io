@@ -162,7 +162,7 @@ function initHero() {
    chamber / light-cone diagram. Purely decorative, so it fails silently. */
 function initTrajectories() {
   document.querySelectorAll('.hero__trajectories, .contact__trajectories').forEach(container => {
-    if (container.dataset.built === 'true') return;  // already has lines, skip
+    if (container.dataset.built === 'true') return;
     buildTrajectorySVG(container);
     container.dataset.built = 'true';
   });
