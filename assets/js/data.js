@@ -18,19 +18,19 @@
       keep "text" and "author" as separate fields.
 ============================================================ */
 
-/*
+
 const HERO_IMAGES = [
   'assets/images/hero/hero-1.svg',
   'assets/images/hero/hero-2.svg',
   'assets/images/hero/hero-3.svg',
 ];
-*/
 
 
+/*
 const HERO_IMAGES = [
   'assets/images/hero/hero-background.jpg',
 ];
-
+*/
 
 const QUOTES = [
   {
